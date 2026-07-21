@@ -49,10 +49,13 @@ export function computeKshetraphala(
   agalaFeet: number,
   agalaInches: number,
 ): number {
-  const udda = toDecimalFeet(uddaFeet, uddaInches);
-  const agala = toDecimalFeet(agalaFeet, agalaInches);
-  const areaSqFt = udda * agala;
-  return Math.round(areaSqFt);
+
+  // Convert each dimension into total inches
+  const udda = (uddaFeet * 12) + uddaInches;
+  const agala = (agalaFeet * 12) + agalaInches;
+
+  // Kshetraphala = total inches × total inches
+  return udda * agala;
 }
 
 // ---------------------------------------------------------------------------
