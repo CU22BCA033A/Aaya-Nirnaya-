@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Noto Sans Kannada", serif;
+  --font-body: "Inter", "Noto Sans Kannada", ui-sans-serif, system-ui, sans-serif;
+
+  --color-limewash: #ede7d9;
+  --color-limewash-raised: #f4efe4;
+  --color-ink: #26211b;
+  --color-pachila: #3f5c3b;
+  --color-pachila-soft: #e3e9df;
+  --color-kavi: #a8431c;
+  --color-kavi-soft: #f3e3d8;
+  --color-manayola: #be8a2e;
+  --color-manayola-soft: #f2e6cd;
+  --color-neela: #2b3a55;
+  --color-neela-soft: #dfe3ea;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-limewash);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--color-neela);
+  color: var(--color-limewash);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-neela);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
