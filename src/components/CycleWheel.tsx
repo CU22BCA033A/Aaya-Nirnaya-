@@ -79,6 +79,7 @@ export function CycleWheel({ modulus, landingSegment, verdict, size = 96, delay 
             }
           />
         ))}
+        <circle cx={cx} cy={cy} r={outerR + 1.5} fill="none" stroke="var(--color-swarna)" strokeWidth={0.6} opacity={0.35} />
         <motion.g
           initial={prefersReducedMotion ? false : { rotate: 0 }}
           animate={{ rotate: pointerTarget }}
@@ -89,9 +90,9 @@ export function CycleWheel({ modulus, landingSegment, verdict, size = 96, delay 
           }
           style={{ originX: "50px", originY: "50px" }}
         >
-          <circle cx={50} cy={50 - outerRHighlight - 3} r={2.6} fill="var(--color-ink)" />
+          <circle cx={50} cy={50 - outerRHighlight - 3} r={2.6} fill="var(--color-swarna-deep)" />
         </motion.g>
-        <circle cx={cx} cy={cy} r={innerR - 2} fill="var(--color-limewash-raised)" stroke="var(--color-neela-soft)" strokeWidth={0.5} />
+        <circle cx={cx} cy={cy} r={innerR - 2} fill="var(--color-limewash-raised)" stroke="var(--color-swarna)" strokeWidth={0.5} opacity={0.8} />
       </svg>
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
         <span className="font-display text-xl font-semibold leading-none text-ink">{landingSegment}</span>
