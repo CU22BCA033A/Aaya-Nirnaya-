@@ -81,15 +81,16 @@ export const AAYA_TYPES: Record<number, AayaType> = {
   6: { name: "Khara", verdict: "inauspicious", note: "Not auspicious for house & commercial buildings." },
   7: { name: "Ghajaya", verdict: "auspicious", note: "Auspicious for house & commercial buildings." },
   0: { name: "Kaka", verdict: "inauspicious", note: "Not auspicious for house & commercial buildings." },
+  8: { name: "Kaka", verdict: "inauspicious", note: "Not auspicious for house & commercial buildings." },
 };
 
 export const THITHI_NAMES: Record<number, string> = {
   1: "Pratipada (Prathama)", 2: "Dwitiya", 3: "Tritiya", 4: "Chaturthi",
   5: "Panchami", 6: "Shashthi", 7: "Saptami", 8: "Ashtami", 9: "Navami",
   10: "Dashami", 11: "Ekadashi", 12: "Dwadashi", 13: "Trayodashi",
-  14: "Chaturdashi", 0: "Purnima (Shukla Paksha) / Amavasya (Krishna Paksha)",
+  14: "Chaturdashi", 0: "Purnima (Shukla Paksha) / Amavasya (Krishna Paksha)", 15: "Purnima (Shukla Paksha) / Amavasya (Krishna Paksha)"
 };
-export const THITHI_INAUSPICIOUS = new Set([0, 1, 4, 8, 9, 14]);
+export const THITHI_INAUSPICIOUS = new Set([0, 1, 4, 8, 9, 14, 15]);
 
 export interface VaaraEntry {
   name: string;
@@ -105,8 +106,9 @@ export const VAARA: Record<number, VaaraEntry> = {
   5: { name: "Guruvara (ಗುರುವಾರ)", day: "Thursday", effect: "Most auspicious — favorable for all activities" },
   6: { name: "Shukravara (ಶುಕ್ರವಾರ)", day: "Friday", effect: "Santāna Vṛddhi — growth of family, progeny" },
   0: { name: "Shanivara (ಶನಿವಾರ)", day: "Saturday", effect: "Neutral" },
+  7: { name: "Shanivara (ಶನಿವಾರ)", day: "Saturday", effect: "Neutral" },
 };
-export const VAARA_INAUSPICIOUS = new Set([0, 1, 3]);
+export const VAARA_INAUSPICIOUS = new Set([0, 1, 3, 7]);
 
 export const NAKSHATRA_NAMES: Record<number, string> = {
   1: "Ashwini", 2: "Bharani", 3: "Krittika", 4: "Rohini", 5: "Mrigashira", 6: "Ardra",
@@ -114,22 +116,22 @@ export const NAKSHATRA_NAMES: Record<number, string> = {
   12: "Uttara Phalguni", 13: "Hasta", 14: "Chitra", 15: "Swati", 16: "Vishakha",
   17: "Anuradha", 18: "Jyeshtha", 19: "Mula", 20: "Purva Ashadha", 21: "Uttara Ashadha",
   22: "Shravana", 23: "Dhanishta", 24: "Shatabhisha", 25: "Purva Bhadrapada",
-  26: "Uttara Bhadrapada", 0: "Revati",
+  26: "Uttara Bhadrapada", 0: "Revati", 27: "Revati",
 };
-export const NAKSHATRA_AUSPICIOUS = new Set([4, 5, 8, 12, 13, 14, 15, 17, 21, 22, 23, 24, 26, 0]);
+export const NAKSHATRA_AUSPICIOUS = new Set([4, 5, 8, 12, 13, 14, 15, 17, 21, 22, 23, 24, 26, 0, 27]);
 
 export const YOGA_NAMES: Record<number, string> = {
   1: "Vishkambha", 2: "Priti", 3: "Ayushman", 4: "Saubhagya", 5: "Shobhana",
   6: "Atiganda", 7: "Sukarma", 8: "Dhriti", 9: "Shoola", 10: "Ganda", 11: "Vriddhi",
   12: "Dhruva", 13: "Vyaghata", 14: "Harshana", 15: "Vajra", 16: "Siddhi",
   17: "Vyatipata", 18: "Variyana", 19: "Parigha", 20: "Shiva", 21: "Siddha",
-  22: "Sadhya", 23: "Shubha", 24: "Shukla", 25: "Brahma", 26: "Indra", 0: "Vaidhriti",
+  22: "Sadhya", 23: "Shubha", 24: "Shukla", 25: "Brahma", 26: "Indra", 0: "Vaidhriti", 27: "Vaidhriti",
 };
-export const YOGA_INAUSPICIOUS = new Set([1, 6, 9, 10, 13, 15, 17, 19, 0]);
+export const YOGA_INAUSPICIOUS = new Set([1, 6, 9, 10, 13, 15, 17, 19, 0, 27]);
 
 export const KARANA_NAMES: Record<number, string> = {
   1: "Bava", 2: "Balava", 3: "Kaulava", 4: "Taitila", 5: "Gara", 6: "Vanija",
-  7: "Vishti (Bhadra)", 8: "Shakuni", 9: "Chatushpada", 10: "Naga", 0: "Kimstughna",
+  7: "Vishti (Bhadra)", 8: "Shakuni", 9: "Chatushpada", 10: "Naga", 0: "Kimstughna", 11: "Kimstughna",
 };
 export const KARANA_AUSPICIOUS = new Set([1, 2, 3, 4, 5]);
 
@@ -148,6 +150,7 @@ export const AMSHA: Record<number, AmshaEntry> = {
   7: { name: "Santanabhivrudhi", effect: "Progeny development / growth of family" },
   8: { name: "Pashu Abhivrudhi", effect: "Livestock development / increase in cattle" },
   0: { name: "Santosha", effect: "Happiness / Joy" },
+  9: { name: "Santosha", effect: "Happiness / Joy" },
 };
 export const AMSHA_INAUSPICIOUS = new Set([1, 4, 5, 6]);
 
@@ -165,6 +168,7 @@ export const DIKPALAKA: Record<number, DikpalakaEntry> = {
   6: { name: "Vayuvya", effect: "Brashta (corrupt)" },
   7: { name: "Kubera", effect: "Wealth and treasure" },
   0: { name: "Ishanya", effect: "Mahashubha (most blessed)" },
+  8: { name: "Ishanya", effect: "Mahashubha (most blessed)" },
 };
 export const DIKPALAKA_INAUSPICIOUS = new Set([2, 3, 4, 6]);
 
@@ -266,8 +270,10 @@ export function computeAayaNirnaya(dimensions: RawDimensions): AayaNirnayaResult
   const { uddaFeet, uddaInches, agalaFeet, agalaInches } = dimensions;
   const K = computeKshetraphala(uddaFeet, uddaInches, agalaFeet, agalaInches);
 
-  const dhana = mod(K * 8, 12);
-  const runa = mod(K * 3, 8);
+  const dhanaRemainder = mod(K * 8, 12);
+  const runaRemainder = mod(K * 3, 8);
+  const dhana = dhanaRemainder === 0 ? 12 : dhanaRemainder;
+  const runa = runaRemainder === 0 ? 8 : runaRemainder;
   const aayaRemainder = mod(K * 9, 8);
   const thithiRemainder = mod(K * 8, 15);
   const vaaraRemainder = mod(K * 9, 7);
