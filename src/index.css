@@ -15,10 +15,19 @@
   --color-manayola-soft: #f2e6cd;
   --color-neela: #2b3a55;
   --color-neela-soft: #dfe3ea;
+
+  /* Premium temple-gold accent (swarna) — decorative only, layered on top of
+     the mural-pigment verdict palette, never used to encode a verdict. */
+  --color-swarna: #a97b2f;
+  --color-swarna-soft: #f1e4c7;
+  --color-swarna-deep: #7c5a22;
+  --color-ink-deep: #16130f;
+  --color-maroon: #5c1f1a;
 }
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,15 +39,25 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 ::selection {
   background-color: var(--color-neela);
   color: var(--color-limewash);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-neela);
+  outline: 2px solid var(--color-swarna);
   outline-offset: 2px;
   border-radius: 2px;
+}
+
+.bg-noise-plaster {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(169, 123, 47, 0.06), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(43, 58, 85, 0.05), transparent 50%);
 }
 
 @media (prefers-reduced-motion: reduce) {
