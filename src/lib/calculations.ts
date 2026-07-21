@@ -27,13 +27,13 @@ export function mod(n: number, m: number): number {
 }
 
 export function toDecimalFeet(feet: number, inches: number): number {
-  const totalInches = feet * 12 + inches;
+  const totalInches = (feet * 12) + inches;
   return totalInches / 12;
 }
 
 /** Carries inches ≥ 12 (or < 0) over into feet, flagging when it adjusted the value. */
 export function normalizeFeetInches(feet: number, inches: number): NormalizedValue {
-  const totalInches = feet * 12 + inches;
+  const totalInches = (feet * 12) + inches;
   const newFeet = Math.floor(totalInches / 12);
   const newInches = mod(totalInches, 12);
   return {
